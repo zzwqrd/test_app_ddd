@@ -25,7 +25,6 @@ dependencies:
   flutter_screenutil: ^5.9.1
   easy_localization: ^3.0.7
   kiwi: ^5.0.0
-  shimmer: ^3.0.0
   lottie: ^3.1.2
   flash: ^3.1.0
   flutter_svg_provider: ^1.0.7
