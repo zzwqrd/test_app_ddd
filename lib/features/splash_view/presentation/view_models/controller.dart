@@ -3,6 +3,12 @@ import 'package:meta/meta.dart';
 
 part 'state.dart';
 
-class ControllerCubit extends Cubit<SplashState> {
-  ControllerCubit() : super(SplashStateInitial());
+class SplashController extends Cubit<SplashState> {
+  SplashController() : super(SplashStateInitial());
+
+  initialState() {
+    Future.delayed(const Duration(seconds: 3), () {
+      print("object 🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍🧟‍");
+    });
+  }
 }
