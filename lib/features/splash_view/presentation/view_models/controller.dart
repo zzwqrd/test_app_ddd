@@ -12,3 +12,5 @@ class SplashController extends Cubit<SplashState> {
     });
   }
 }
+
+//
