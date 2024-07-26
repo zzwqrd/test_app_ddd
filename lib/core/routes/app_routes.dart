@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_app_ddd/features/splash_view/presentation/view/view.dart';
 
 import 'routes.dart';
 
@@ -8,15 +9,8 @@ class AppRoutes {
 
   AppRoutes._internal();
   Map<String, Widget Function(BuildContext context)> appRoutes = {
-    // NamedRoutes.i.test: (context) => FilterForm(),
-    // NamedRoutes.i.sign_in: (context) => TestPage(),
-    // NamedRoutes.i.welcome_view: (context) => const TestProvider(),
-    // NamedRoutes.i.home_view: (context) => Testviewgetdata(),
-    // NamedRoutes.i.nav_bar_view: (context) => const NavigationView(),
-    // NamedRoutes.i.video_view: (context) => const VideoView(),
+    NamedRoutes.i.splash: (context) => const SplashView(),
 
-    // NamedRoutes.i.mu_droop: (context) => CustomMultiselectDropDown(),
-    // NamedRoutes.i.home: (context) => const HomeView(),
     // NamedRoutes.i.tasks: (context) => TasksView(title: context.arg["title"]),
     // NamedRoutes.i.allProjects: (context) => const AllProjectsView(),
     // NamedRoutes.i.navbar: (context) => NavbarView(index: context.arg["index"]),
