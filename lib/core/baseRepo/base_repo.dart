@@ -6,7 +6,7 @@ import '../network/exceptions/exceptions.dart';
 import '../network/exceptions/failures.dart';
 
 abstract class NetworkService {
-  final DioClient dioHelper = DioClient.i;
+  final DioClient dioHelper = DioClient.instance;
 
   Future<Either<Failure, ReturnType>> exceptionHandler<ReturnType>(
       Future<ReturnType> Function() function) async {
