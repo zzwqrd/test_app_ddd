@@ -11,6 +11,13 @@ class ServerFailure extends Failure {
   });
 }
 
+class NotFoundFailure extends Failure {
+  final String message;
+  final int statusCode;
+
+  NotFoundFailure({required this.message, required this.statusCode});
+}
+
 class ClientFailure extends Failure {
   ClientFailure({
     super.message,

@@ -21,7 +21,7 @@ class DioClient {
   DioClient._internal() {
     _dio
       ..options.baseUrl = ApiConfig.baseUrl
-      ..options.headers = header
+      ..options.headers = ApiConfig.header
       ..options.connectTimeout = connectionTimeout
       ..options.receiveTimeout = receiveTimeout
       ..options.responseType = ResponseType.json
@@ -31,9 +31,10 @@ class DioClient {
   Future<Response> getRequest(
       {required String url, Map<String, dynamic>? queryParams}) async {
     try {
-      final response = await _dio.get(
-          url.startsWith("http") ? url : "${ApiConfig.baseUrl}/$url",
-          queryParameters: queryParams);
+      Response response = await _dio.get(
+        "${ApiConfig.baseUrl}$url",
+        queryParameters: queryParams,
+      );
       return response;
     } on DioException catch (dioError) {
       throw DioExceptions.fromDioError(dioError);
@@ -77,24 +78,3 @@ class DioClient {
 
   Dio get dio => _dio;
 }
-
-// class DioClient {
-//   static final i = DioClient._();
-//   final _dio = Dio();
-//   static const Duration receiveTimeout = Duration(milliseconds: 15000);
-//   static const Duration connectionTimeout = Duration(milliseconds: 15000);
-//   static const header = {
-//     // 'Authorization': 'Bearer $token',
-//     'content-Type': 'application/json',
-//   };
-//   @override
-//   DioClient._() {
-//     _dio
-//       ..options.baseUrl = ApiConfig.baseUrl
-//       ..options.headers = header
-//       ..options.connectTimeout = connectionTimeout
-//       ..options.receiveTimeout = receiveTimeout
-//       ..options.responseType = ResponseType.json
-//       ..interceptors.add(DioInterceptor());
-//   }
-// }
