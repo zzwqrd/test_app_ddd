@@ -28,10 +28,12 @@ class DioClient {
       ..interceptors.add(DioInterceptor());
   }
 
-  Future<Response> getRequest(String endpoint,
-      {Map<String, dynamic>? queryParams}) async {
+  Future<Response> getRequest(
+      {required String url, Map<String, dynamic>? queryParams}) async {
     try {
-      final response = await _dio.get(endpoint, queryParameters: queryParams);
+      final response = await _dio.get(
+          url.startsWith("http") ? url : "${ApiConfig.baseUrl}/$url",
+          queryParameters: queryParams);
       return response;
     } on DioException catch (dioError) {
       throw DioExceptions.fromDioError(dioError);
