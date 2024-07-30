@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/utils/helpers/date/DateTimeUtils.dart';
-import '../../../../core/utils/helpers/date/DefaultDateTimeTextFieldNew.dart';
-import '../../../../core/utils/helpers/text_form_date.dart';
+import '../../../../core/utils/helpers/date/DefaultDateTimeTextFieldNewOne.dart';
 
 class UserView extends StatelessWidget {
   UserView({super.key});
@@ -17,19 +15,19 @@ class UserView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           // WidgetList(),
-          DefaultDateTimeTextField(
-            controller: controller,
-            onDateTimeChange: (dateTime) {
-              // controller.text = dateTime;
-            },
-
-            // initDate: DateTime.now(),
-            label: "Select Date and Time",
-            // helperText: "Tap to select date and time",
-            // icon: Icons.calendar_today,
-            suffixIcon: Icons.access_time,
-            borderLess: false,
-          ),
+          // DefaultDateTimeTextField(
+          //   controller: controller,
+          //   onDateTimeChange: (dateTime) {
+          //     // controller.text = dateTime;
+          //   },
+          //
+          //   // initDate: DateTime.now(),
+          //   label: "Select Date and Time",
+          //   // helperText: "Tap to select date and time",
+          //   // icon: Icons.calendar_today,
+          //   suffixIcon: Icons.access_time,
+          //   borderLess: false,
+          // ),
           const SizedBox(height: 30),
           // DefaultDateAndTimeTextField(
           //   controller: dateAndTimecontroller,
@@ -42,17 +40,31 @@ class UserView extends StatelessWidget {
           //   mode: DateTimeMode.both, // حدد الوضع هنا
           // ),
           const SizedBox(height: 30),
-          DefaultDateTimeTextFieldNew(
-            onDateTimeChange: (dateTime) {},
-            initDate: DateTime.now(),
+          //// آخر تحديث للوقت والتاريخ والاثنين معا مع مراعات اظهار اسم الشهر او الرقم او اختيار الوقت او التاريخ او الاثنين معا او اختيار التاريخ ميلادي او هجري
+          DefaultDateTimeTextFieldNewOne(
+            onDateTimeChange: (v) {},
             controller: newC,
-            label: "Select Date and Time",
-            // helperText: "Tap to select date and time",
+            // initDate: DateTime.now(),
+            label: "اختر التاريخ والوقت",
+            // helperText: "اضغط لاختيار التاريخ والوقت",
             // icon: Icons.calendar_today,
             suffixIcon: Icons.access_time,
-            mode: DateTimeMode.date, // حدد الوضع هنا
-            calendarType: CalendarType.hijri, // حدد نوع التقويم هنا
+            mode: DateTimeMode.time,
+            calendarType: CalendarType.hijri, // اختر نوع التقويم
+            dateDisplayFormat:
+                DateDisplayFormat.numeric, // اختر طريقة عرض التاريخ
           ),
+          // DefaultDateTimeTextFieldNew(
+          //   onDateTimeChange: (dateTime) {},
+          //   initDate: DateTime.now(),
+          //   controller: newC,
+          //   label: "Select Date and Time",
+          //   // helperText: "Tap to select date and time",
+          //   // icon: Icons.calendar_today,
+          //   suffixIcon: Icons.access_time,
+          //   mode: DateTimeMode.date, // حدد الوضع هنا
+          //   calendarType: CalendarType.hijri, // حدد نوع التقويم هنا
+          // ),
         ],
       ),
     );
