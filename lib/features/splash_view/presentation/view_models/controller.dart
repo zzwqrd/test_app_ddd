@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
-import 'package:test_app_ddd/core/utils/helpers/route.dart';
 
 import '../../../../core/routes/routes.dart';
+import '../../../../core/utils/helpers/route.dart';
 
 part 'state.dart';
 

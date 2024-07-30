@@ -17,11 +17,8 @@ abstract class NetworkService {
         print(e.toString());
         print(trace.toString());
       }
+
       if (e is ServerException) {
-        if (e.statusCode == 404) {
-          return Left(NotFoundFailure(
-              message: "Resource not found", statusCode: e.statusCode!));
-        }
         return Left(
             ServerFailure(message: e.toString(), statusCode: e.statusCode));
       } else {

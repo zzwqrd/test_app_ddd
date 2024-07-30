@@ -11,7 +11,7 @@ class AppRoutes {
   AppRoutes._internal();
   Map<String, Widget Function(BuildContext context)> appRoutes = {
     NamedRoutes.i.splash: (context) => const SplashView(),
-    NamedRoutes.i.user: (context) => const UserView(),
+    NamedRoutes.i.user: (context) => UserView(),
 
     // NamedRoutes.i.tasks: (context) => TasksView(title: context.arg["title"]),
     // NamedRoutes.i.allProjects: (context) => const AllProjectsView(),
