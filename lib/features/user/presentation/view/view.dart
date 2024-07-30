@@ -50,7 +50,7 @@ class UserView extends StatelessWidget {
             // icon: Icons.calendar_today,
             suffixIcon: Icons.access_time,
             mode: DateTimeMode.time,
-            calendarType: CalendarType.hijri, // اختر نوع التقويم
+            calendarType: CalendarType.gregorian, // اختر نوع التقويم
             dateDisplayFormat:
                 DateDisplayFormat.numeric, // اختر طريقة عرض التاريخ
           ),
