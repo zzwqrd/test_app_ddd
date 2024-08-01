@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:test_app_ddd/features/user/presentation/view/widgets/test_match.dart';
+
+import 'widgets/test_match.dart';
 
 class UserView extends StatelessWidget {
   UserView({super.key});
@@ -49,8 +50,8 @@ class UserView extends StatelessWidget {
     //       //   // helperText: "اضغط لاختيار التاريخ والوقت",
     //       //   // icon: Icons.calendar_today,
     //       //   suffixIcon: Icons.access_time,
-    //       //   mode: DateTimeMode.time,
-    //       //   calendarType: CalendarType.gregorian, // اختر نوع التقويم
+    //       //   mode: DateTimeMode.date,
+    //       //   calendarType: CalendarType.hijri, // اختر نوع التقويم
     //       //   dateDisplayFormat:
     //       //       DateDisplayFormat.numeric, // اختر طريقة عرض التاريخ
     //       // ),
